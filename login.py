@@ -33,8 +33,8 @@ class login:
         self.txt_password = Entry( frame1, font=("times new roman", 15, "bold"), bg="lightgray")
         self.txt_password.place( x=150, y=290,width=350,height=35 )
 
-        btn_reg=Button(frame1,text="Register new Account ",command=self.register_window,font=("times new roman",15),bd=0,bg="white",fg="#B00857").place(x=150,y=340)
-        btn_forget=Button(frame1,text="Forget Password ? ",command=self.forget_window,font=("times new roman",15),bd=0,bg="white",fg="#B00857").place(x=350,y=340)
+        btn_reg=Button(frame1,text="Register new Account ",command=self.register_window,font=("times new roman",15),bd=0,bg="white",fg="#B00857",cursor="hand2").place(x=150,y=340)
+        btn_forget=Button(frame1,text="Forget Password ? ",command=self.forget_window,font=("times new roman",15),bd=0,bg="white",fg="#B00857",cursor="hand2").place(x=350,y=340)
 
         btn_login = Button( frame1, text="Login",command=self.login, font=("times new roman", 20, "bold"), bg="#B00857", fg="white",cursor="hand2" ).place(
             x=150, y=400 ,width=185,height=40)
@@ -115,7 +115,7 @@ class login:
                     self.txt_newpassword = Entry( self.root2, font=("times new roman", 19, "bold"), bg="lightgray" )
                     self.txt_newpassword.place( x=125, y=320, width=250 )
 
-                    btn_changepass=Button(self.root2,text="Change Password",font=("times new roman",18,"bold"),command=self.forget_password,bg="green",fg="black").place(x=150,y=400)
+                    btn_changepass=Button(self.root2,text="Change Password",font=("times new roman",18,"bold"),command=self.forget_password,bg="green",fg="black",cursor="hand2").place(x=150,y=400)
                    
 
             except Exception as es:

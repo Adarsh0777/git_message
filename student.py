@@ -78,13 +78,13 @@ class Student:
         btn_Frame=Frame(manage_Frame,bd=4,relief=RIDGE,bg="pink1")
         btn_Frame.place(x=8,y=615,width=425)
 
-        addbtn=Button(btn_Frame,text='Add',width=10,height=2,bg="green2",command=self.add_student).grid(row=0,column=0,padx=13,pady=13)
+        addbtn=Button(btn_Frame,text='Add',width=10,height=2,bg="green2",command=self.add_student,cursor="hand2").grid(row=0,column=0,padx=13,pady=13)
 
-        updatebtn=Button(btn_Frame,text='Update',width=10,height=2,bg="yellow",command=self.update_data).grid(row=0,column=1,padx=13,pady=13)
+        updatebtn=Button(btn_Frame,text='Update',width=10,height=2,bg="yellow",command=self.update_data,cursor="hand2").grid(row=0,column=1,padx=13,pady=13)
         
-        deletebtn=Button(btn_Frame,text='Delete',width=10,height=2,bg="red",command=self.delete_data).grid(row=0,column=2,padx=13,pady=13)
+        deletebtn=Button(btn_Frame,text='Delete',width=10,height=2,bg="red",command=self.delete_data,cursor="hand2").grid(row=0,column=2,padx=13,pady=13)
         
-        clearbtn=Button(btn_Frame,text='Clear',width=10,height=2,bg="dodgerblue1",command=self.clear).grid(row=0,column=3,padx=13,pady=13)
+        clearbtn=Button(btn_Frame,text='Clear',width=10,height=2,bg="dodgerblue1",command=self.clear,cursor="hand2").grid(row=0,column=3,padx=13,pady=13)
 
         
 
@@ -103,8 +103,8 @@ class Student:
         txt_search=Entry(detail_Frame,textvariable=self.search_txt,font=("times new roman", 17, "bold"),bd=5,relief=GROOVE)
         txt_search.grid(row=0,column=2,pady=23,padx=23,sticky="w")
 
-        searchbtn=Button(detail_Frame,text='Search',width=15,height=2,bg="yellow",command=self.search_data).grid(row=0,column=3,padx=15,pady=15)
-        showallbtn=Button(detail_Frame,text='Show All',width=15,height=2,bg="green2",command=self.fetch_data).grid(row=0,column=4,padx=15,pady=15)
+        searchbtn=Button(detail_Frame,text='Search',width=15,height=2,bg="yellow",command=self.search_data,cursor="hand2").grid(row=0,column=3,padx=15,pady=15)
+        showallbtn=Button(detail_Frame,text='Show All',width=15,height=2,bg="green2",command=self.fetch_data,cursor="hand2").grid(row=0,column=4,padx=15,pady=15)
 
         
         table_frame=Frame(detail_Frame,bd=4,relief=RIDGE)
