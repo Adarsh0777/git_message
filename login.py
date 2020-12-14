@@ -11,8 +11,8 @@ class login:
         self.root.title( "Login Form" )
         self.root.geometry( "1915x1080" )
 
-        self.bg = ImageTk.PhotoImage( file="img/454132.jpg" )
-        bg = Label( self.root, image=self.bg ).place( relwidth=1, relheight=1 )
+        self.bg = ImageTk.PhotoImage( file="img/Wallpapers-HD-Nature.jpg" )
+        bg = Label( self.root, image=self.bg ).place(relwidth=1,relheight=1)
 
         self.left = ImageTk.PhotoImage( file="img/login-.jpg" )
         left = Label( self.root, image=self.left ).place( x=80, y=144, width=450, height=550 )

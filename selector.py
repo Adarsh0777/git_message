@@ -7,11 +7,13 @@ class selector:
         self.root.title("Student & Employee")
         self.root.geometry("1915x1080")
 
-        Background = Label( self.root,bg="turquoise1").place( relwidth=1, relheight=1 )
+        
 
         title=Label(self.root,text="Student & Employee management system",bd=8, relief=GROOVE, font=("times new roman",40,"bold"),bg="#B00857",fg="white")
         title.pack(side=TOP,fill=X)
 
+        self.bg = ImageTk.PhotoImage( file="img/Wallpapers-HD-Nature.jpg" )
+        bg = Label( self.root, image=self.bg ).place(relwidth=1,relheight=1)
         
 
         self.left = ImageTk.PhotoImage( file="img/176-1761112_company-indian-students-images-png.png" )
