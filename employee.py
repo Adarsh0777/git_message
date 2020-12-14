@@ -140,21 +140,24 @@ class employee:
         if self.emp_id_var.get()=="" or self.name_var.get()=="" or self.email_var.get()=="" or self.designation_var.get()=="" or self.contact_var.get()=="" or self.dob_var.get()=="":
             messagebox.showerror("Error","All Fields are required!!")
         else:
-            con=pymysql.connect(host="localhost",user="root",password="",database="emp1")
-            cur=con.cursor()
-            cur.execute("insert into employees values(%s,%s,%s,%s,%s,%s,%s)",(self.emp_id_var.get(),
-                                                                            self.name_var.get(),
-                                                                            self.email_var.get(),
-                                                                            self.designation_var.get(),
-                                                                            self.contact_var.get(),
-                                                                            self.dob_var.get(),
-                                                                            self.txt_Address.get('1.0',END)
-                                                                            ))
-            con.commit()
-            self.fetch_data()
-            self.clear()
-            con.close()
-            messagebox.showinfo("Successs","record has been inserted Successfully!!")
+            try:
+                con=pymysql.connect(host="localhost",user="root",password="",database="emp1")
+                cur=con.cursor()
+                cur.execute("insert into employees values(%s,%s,%s,%s,%s,%s,%s)",(self.emp_id_var.get(),
+                                                                                self.name_var.get(),
+                                                                                self.email_var.get(),
+                                                                                self.designation_var.get(),
+                                                                                self.contact_var.get(),
+                                                                                self.dob_var.get(),
+                                                                                self.txt_Address.get('1.0',END)
+                                                                                ))
+                con.commit()
+                self.fetch_data()
+                messagebox.showinfo("Successs","record has been Inserted Successfully!!")
+                self.clear()
+                con.close()
+            except Exception as es:
+                messagebox.showerror("Error",f"Error due to :{str(es)}",parent=self.root)
 
     def fetch_data(self):
         con=pymysql.connect(host="localhost",user="root",password="",database="emp1")

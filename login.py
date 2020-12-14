@@ -50,19 +50,19 @@ class login:
         self.txt_password.delete(0,END)
         self.txt_email.delete(0,END)
     
-    def forget_password(self):
+    def change_password(self):
         if self.cmb_question.get()=="Select" or self.txt_answer.get()=="" or self.txt_newpassword.get()=="": 
             messagebox.showerror("Error","All fields are Required !",parent=self.root2)
         else:
             try:
                 con=pymysql.connect(host="localhost",user="root",password="",database="emp1")
                 cur=con.cursor()
-                cur.execute("select * from member1 employees where email=%s and question=%s and answer=%s",(self.txt_email.get(),self.cmb_question.get(),self.txt_answer.get()))
+                cur.execute("select * from member1  where email=%s and question=%s and answer=%s",(self.txt_email.get(),self.cmb_question.get(),self.txt_answer.get()))
                 row=cur.fetchone() 
                 if row==None:
                     messagebox.showerror("Error","Please Select correct security Question Or Enter Correct Answer !!",parent=self.root2)
                 else:
-                    cur.execute("update member1 employees set password=%s where email=%s",(self.txt_newpassword.get(),self.txt_email.get()))
+                    cur.execute("update member1 set password=%s where email=%s",(self.txt_newpassword.get(),self.txt_email.get()))
                     con.commit()
                     con.close()
                     messagebox.showinfo("Success"," Your Password has been Changed !!  Please Login with new Password",parent=self.root2)
@@ -83,7 +83,7 @@ class login:
             try:
                 con=pymysql.connect(host="localhost",user="root",password="",database="emp1")
                 cur=con.cursor()
-                cur.execute("select * from member1 employees where email=%s",self.txt_email.get())
+                cur.execute("select * from member1 where email=%s",self.txt_email.get())
                 row=cur.fetchone() 
                 if row==None:
                     messagebox.showerror("Error","Please enter your valid Email Address to reset your password",parent=self.root)
@@ -115,7 +115,7 @@ class login:
                     self.txt_newpassword = Entry( self.root2, font=("times new roman", 19, "bold"), bg="lightgray" )
                     self.txt_newpassword.place( x=125, y=320, width=250 )
 
-                    btn_changepass=Button(self.root2,text="Change Password",font=("times new roman",18,"bold"),command=self.forget_password,bg="green",fg="black",cursor="hand2").place(x=150,y=400)
+                    btn_changepass=Button(self.root2,text="Change Password",font=("times new roman",18,"bold"),command=self.change_password,bg="green",fg="black",cursor="hand2").place(x=150,y=400)
                    
 
             except Exception as es:
@@ -130,7 +130,7 @@ class login:
             try:
                 con=pymysql.connect(host="localhost",user="root",password="",database="emp1")
                 cur=con.cursor()
-                cur.execute("select * from member1 employees where email=%s and password=%s",(self.txt_email.get(),self.txt_password.get()))
+                cur.execute("select * from member1  where email=%s and password=%s",(self.txt_email.get(),self.txt_password.get()))
                 row=cur.fetchone() 
                 if row==None:
                     messagebox.showerror("Error","Invalid Username or Password",parent=self.root)

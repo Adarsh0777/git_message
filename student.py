@@ -157,9 +157,9 @@ class Student:
                                                                                 ))
                 con.commit()
                 self.fetch_data()
+                messagebox.showinfo("Successs","record has been Inserted Successfully!!")
                 self.clear()
                 con.close()
-                messagebox.showinfo("Successs","record has been inserted Successfully!!")
             except Exception as es:
                 messagebox.showerror("Error",f"error due to: {str(es)}",parent=self.root)
 

@@ -82,7 +82,7 @@ class register:
         self.txt_lname.delete( 0, END ),
         self.txt_contact.delete( 0, END ),
         self.txt_email.delete( 0, END ),
-        self.cmb_question.current( 0,),
+        self.cmb_question.current( 0),
         self.txt_answer.delete( 0, END ),
         self.txt_password.delete( 0, END ),
         self.txt_cpassword.delete(0,END)
